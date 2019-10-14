@@ -1,0 +1,81 @@
+
+<html>
+
+    <head>
+
+        <script language="JavaScript" type="text/javascript" src="jsencrypt.min.js"></script>
+
+        <script>
+
+			function print(string)
+			{
+				document.write(string + "\n\n");
+			}
+			function radom(length) {
+			   var result           = '';
+			   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			   var charactersLength = characters.length;
+			   for ( var i = 0; i < length; i++ ) {
+				  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+			   }
+			   return result;
+			}
+			
+			print("<h1>Rsa Test:</h1>");
+			
+			var start = new Date().getTime();
+			print("<p>start:"+start+"</p>");
+			
+			
+			for(var i=0;i<100;i++){
+			  var str = radom(20);
+				print("<b>"+str+"</b>");
+				print("<p>"+RSA_ENCRYPT.encrypt(str)+"</p>");
+			}
+			
+			
+			var end = new Date().getTime();
+			print("<p>end:"+end+"</p>");
+			print("<p>time:"+((end-start)/1000)+"s</p>");
+        </script>
+
+    </head>
+    
+    <body style="font-family: monospace; ">
+
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
